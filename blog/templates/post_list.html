@@ -22,8 +22,9 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> This is the homepage</h3>
-                    <p class="text-light">This is subtext
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Hello, My name is Odin May and this is my programming blog. Here I will discuss topics related to programming and computer science.
+                    This is a beginner-friendly blog but will cover some more advanced topics with deep dives and real examples.</h3>
+                    <p class="text-light">Welcome, and let's code!
                     </p>
                 </div>
             </div>
@@ -39,8 +40,9 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="card-text">{{post.content|slice:":350"|safe}}</p>
+                    <p class="text-end pt-3"><a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a></p>
+
                 </div>
             </div>
             {% endfor %}
