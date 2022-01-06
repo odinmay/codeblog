@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row py-3 justify-content-center">
+           {% include 'sidebar.html' %}
+           <div class="col my-3 mx-3" id="main">
+               <hr>
+               <h1 class="text-center my-2">Welcome, My name is Odin!</h1>
+               <p class="lead my-4 text-center" style="text-indent: 30px"><strong>Hopefully this site will help you on your journey to becoming a programmer.
+                   Programming is a fantastic thing to learn. Understanding the basic syntax and concepts is vital.
+                   While I was learning to code I struggled a lot while trying to follow confusing examples and boring problems.
+                   I would like to share with you some helpful information, tips, tricks and overall the exciting world of programming.
+                   Let's get into it!</strong></p>
+               <hr>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col my-2 mx-3">
+                <h2>Where to begin?</h2>
+                <p class="lead" style="text-indent: 30px"><strong>If you are totally new to programming you should check
+                    out the <a href={% url 'post_detail' 'programming-concepts' %}>Programming Concepts</a> post. If you know some Python but want to learn more,
+                    there are also more advanced posts covering all kinds of exciting things to check out
+                    including example(json, requests, file handling, logging and much more.) All of my posts include a
+                    link to a google colab notebook where you can follow along with the examples and write code yourself
+                    to help get comfortable actually typing the code. When I started learning I thought since I understood
+                    the concepts and could remember them that I didn't need to write the basic code examples. Boy was I
+                    wrong. Don't be like me, write the code. The only way to get better at it, is by doing it.</strong></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
