@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
 <script>
     $(document).ready(function(){
@@ -6,20 +6,14 @@
     });
 </script>
 
-<div class="container-fluid">
-    <div class="row py-3 justify-content-center">
-       {% include 'sidebar.html' %}
-       <div class="col-8 my-3 mx-3" id="main">
-           <div class="card-body">
-           <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-           <p class="text-muted py-3" style="font-size: x-large; margin-left: .5em">Odin May | <a href="https://colab.research.google.com/gist/odinmay/6f748f39296d4e226ecee7f19fbf3985/blog1_programming_concepts.ipynb">Google Colab Notebook</a></p>
-               <hr>
-           <br>
-               <p class="card-text ">{{ object.content | safe }}</p>
-           </div>
-       </div>
+{% block maincol %}
+
+    <div class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <p class="text-muted py-3" style="font-size: x-large; margin-left: .5em">Odin May | <a href="https://colab.research.google.com/gist/odinmay/6f748f39296d4e226ecee7f19fbf3985/blog1_programming_concepts.ipynb">Google Colab Notebook</a></p>
+           <hr>
+        <br>
+           <p class="card-text ">{{ object.content | safe }}</p>
     </div>
-</div>
 
-
-{% endblock content %}
+{% endblock maincol %}

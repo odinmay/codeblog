@@ -16,6 +16,7 @@ class Post(models.Model):
     content = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    colab_link = models.CharField(max_length=400, blank=True)
 
     class Meta:
         ordering = ['-created_on']
