@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block maincol %}
+
+    <div class="row">
+        {% for project in project_list %}
+            <div class="col-4 text-center">
+                 <div class="card-body">
+                     <h1>{{ project.title }}</h1>
+                     <p class="text-muted py-3" style="font-size: x-large; margin-top: 1em">Odin May<br><a href={{ project.github_link }}>Google Colab Notebook</a></p>
+                     <hr>
+                     <p class="card-text ">{{ project.content |slice:":250"| safe }}</p>
+                </div>
+                <a href="#" class="btn btn-lg btn-block btn-outline-secondary btn-outline-dark" role="button">Explore Project</a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock maincol %}

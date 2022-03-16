@@ -23,3 +23,14 @@ class Post(models.Model):
 
         def __str__(self):
             return self.title
+
+
+class Project(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    content = RichTextField(blank=True, null=True)
+    github_link = models.CharField(max_length=400, blank=True)
+
+    class Meta:
+        def __str__(self):
+            return self.title
